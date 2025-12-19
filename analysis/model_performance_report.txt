@@ -1,0 +1,140 @@
+================================================================================
+MODEL PERFORMANCE DIAGNOSTIC REPORT
+================================================================================
+
+Generated: 2025-12-18 15:43:54.635541
+Model: RandomForestRegressor
+Dataset: 21,094 players, 77 features
+Test Set Size: 4,219 players
+
+================================================================================
+OVERALL PERFORMANCE
+================================================================================
+
+Training Set:
+  MAE:  €1.73M
+  RMSE: €6.49M
+  R²:   0.262
+  MAPE: 329.5%
+
+Test Set:
+  MAE:         €1.83M
+  RMSE:        €6.93M
+  Median AE:   €0.37M
+  R²:          0.266
+  MAPE:        351.4%
+
+Overfitting Analysis:
+  MAE increase (train to test): 6.2%
+  R² decrease (train to test):  -0.004
+
+================================================================================
+PERFORMANCE BY POSITION
+================================================================================
+
+GK (496 players):
+  MAE:  €1.07M
+  MAPE: 551.3%
+  R²:   0.289
+
+MID (3,723 players):
+  MAE:  €1.93M
+  MAPE: 324.8%
+  R²:   0.263
+
+================================================================================
+PERFORMANCE BY LEAGUE
+================================================================================
+
+Premier League (424 players):
+  MAE:  €6.72M
+  MAPE: 619.7%
+  R²:   0.134
+
+La Liga (435 players):
+  MAE:  €2.27M
+  MAPE: 250.2%
+  R²:   0.278
+
+Bundesliga (363 players):
+  MAE:  €2.16M
+  MAPE: 284.6%
+  R²:   0.343
+
+Serie A (630 players):
+  MAE:  €1.50M
+  MAPE: 408.2%
+  R²:   0.264
+
+Ligue 1 (385 players):
+  MAE:  €1.71M
+  MAPE: 222.6%
+  R²:   0.248
+
+================================================================================
+PERFORMANCE BY AGE GROUP
+================================================================================
+
+U21 (Youth) (66 players):
+  MAE:  €3.26M
+  MAPE: 262.1%
+  R²:   0.110
+
+21-25 (Emerging) (750 players):
+  MAE:  €3.23M
+  MAPE: 413.3%
+  R²:   0.263
+
+26-30 (Prime) (926 players):
+  MAE:  €2.68M
+  MAPE: 325.9%
+  R²:   0.214
+
+30+ (Veteran) (1,875 players):
+  MAE:  €0.65M
+  MAPE: 338.6%
+  R²:   0.204
+
+================================================================================
+PERFORMANCE BY VALUE RANGE
+================================================================================
+
+Cheap (<€5M) (3,828 players):
+  MAE:  €0.53M
+  MAPE: 380.0%
+  R²:   0.105
+
+Mid (€5-25M) (292 players):
+  MAE:  €7.43M
+  MAPE: 68.1%
+  R²:   -2.155
+
+Expensive (€25-50M) (76 players):
+  MAE:  €26.72M
+  MAPE: 84.5%
+  R²:   -15.947
+
+Elite (>€50M) (22 players):
+  MAE:  €61.23M
+  MAPE: 83.9%
+  R²:   -4.426
+
+================================================================================
+KEY FINDINGS & RECOMMENDATIONS
+================================================================================
+
+Systematic Performance Patterns:
+  [WARNING] Model UNDERVALUES young players (U21) by EUR 2.34M on average
+  [WARNING] Model UNDERVALUES elite players (>EUR 50M) by EUR 75.88M on average
+  [OK] Model handles relegation context well
+
+Next Steps:
+  1. Analyze feature importance to identify most critical features
+  2. Search for historical seasons data to expand dataset
+  3. Check for data leakage in contextual features
+  4. Optimize hyperparameters for better performance
+  5. Consider ensemble methods to reduce prediction variance
+
+================================================================================
+END OF REPORT
+================================================================================
